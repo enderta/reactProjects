@@ -1,6 +1,6 @@
 import React from 'react'
-import femaleProfile from '../images/femaleProfile.png'
-import maleProfile from '../images/maleProfile.jpg'
+import femaleProfile from './images/femaleProfile.jpg'
+import maleProfile from './images/maleProfile.jpg'
 const Employees = () => {
   const [selectedTeam, setSelectedTeam] = React.useState('TeamA')
   const [employees, setEmployees] = React.useState([{

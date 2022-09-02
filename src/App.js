@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Employees from './Compononets/Employees';
+import Employees from './Compononets/Employees.jsx';
 
 function App() {
   return (
