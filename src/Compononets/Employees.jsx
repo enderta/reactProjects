@@ -104,7 +104,7 @@ console.log(employees.filter(emp=>emp.teamName===selectedTeam).length)
    <h3 className='text-center'>total number of {selectedTeam}:{employees.filter(emp=>emp.teamName===selectedTeam).length} </h3>
       <main className='container'>
         <div className='row justify-content-center mt-3 mb-3'>
-        <div className='col-6'>
+        <div className='col-4'>
         <select className='form-select form-select-lg' value={selectedTeam} onChange={handleSelectedTeam}>
           <option value="TeamA">TeamA</option>
           <option value="TeamB">TeamB</option>
