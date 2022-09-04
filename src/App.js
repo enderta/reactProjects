@@ -1,12 +1,13 @@
-import './App.css';
-import Employees from './Compononets/Employees.jsx';
-
-function App() {
+import React from 'react'
+import Meal from './Meal'
+import Search from './Search'
+const App = () => {
   return (
-    <div className="App">
-   <Employees />
-        </div>
-  );
+    <div>
+    <Search />
+      <Meal />
+    </div>
+  )
 }
 
-export default App;
+export default App
