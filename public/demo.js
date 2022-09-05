@@ -31,3 +31,6 @@ function abracaFunction(yourFunc) {
 
     let num=[1,2,3]
     console.log(num.map((num)=>num*2));
+
+    let num2=[1,2,3]
+    console.log(num2.map((num)=>num*2).reduce((a,b)=>a+b));

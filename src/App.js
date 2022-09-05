@@ -1,11 +1,9 @@
 import React from 'react'
-import Meal from './Meal'
-import Search from './Search'
+import Meals from './Components/meals/Meals'
 const App = () => {
   return (
     <div>
-    <Search />
-      <Meal />
+    <Meals />
     </div>
   )
 }
