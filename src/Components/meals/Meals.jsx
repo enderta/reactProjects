@@ -8,6 +8,7 @@ const Meals = () => {
 const [meals, setMeals] = useState([])
 const [loading, setLoading] = useState(false)
 const [searchTerm, setSearchTerm] = useState('')
+
 useEffect(() => {
     setLoading(true)
     fetch(allMealsUrl)
@@ -76,7 +77,10 @@ console.log(meals)
                             <h4>{strMeal}</h4>
                             <p>{strCategory}</p>
                             <p>{strArea}</p>
-                            <a href={meal.strYoutube}>YouTube</a>
+                            <a href={meal.strYoutube}>YouTube Recepie</a>
+                            
+                           
+
                         </div>
                     </article>
                 )
