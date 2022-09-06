@@ -1,9 +1,10 @@
 import React from 'react'
-import Meals from './Components/meals/Meals'
+
+import MainApp from './Components/weatherapp/MainApp'
 const App = () => {
   return (
     <div>
-    <Meals />
+   <MainApp />
     </div>
   )
 }
