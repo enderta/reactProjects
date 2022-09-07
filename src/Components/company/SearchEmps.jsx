@@ -8,7 +8,7 @@ const SearchEmps = (props) => {
 
   return (
     <div>
-   <nav className="navbar navbar-dark bg-dark">
+   <nav className="navbar navbar-dark bg-primary">
     <a className="navbar-brand">Company</a>
     <form className="form-inline">
       <input
@@ -19,9 +19,7 @@ const SearchEmps = (props) => {
         value={props.s}
         onChange={props.data}
       />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
+     
     </form>
   </nav>
     </div>
