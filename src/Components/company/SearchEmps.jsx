@@ -1,11 +1,7 @@
 import React from 'react'
 
 const SearchEmps = (props) => {
-   
-
-
-
-
+ 
   return (
     <div>
    <nav className="navbar navbar-dark bg-primary">
@@ -19,7 +15,6 @@ const SearchEmps = (props) => {
         value={props.s}
         onChange={props.data}
       />
-     
     </form>
   </nav>
     </div>
