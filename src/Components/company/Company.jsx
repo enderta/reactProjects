@@ -43,13 +43,22 @@ const handleSearch = (e) => {
     
 }
 const handleDelete = (id) => {
-    const filtered = emps.filter((emp) => {
-        return emp.id !== id
+    fetch(`http://localhost:8080/api/v1/employees/${id}`,{
+        method:'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
     })
-    setEmps(filtered)
-    setFilter(filtered)
+    .then(res=>res.json())
+    .then((result)=>{
+        const newEmps = emps.filter((emp)=>{
+            return emp.id !== id
+        })
+        setEmps(newEmps)
+        setFilter(newEmps)
+    })
+    .catch(error => console.log('error', error));
 }
-
 
   return (
     <div>
@@ -58,7 +67,7 @@ const handleDelete = (id) => {
         <Tables data={emps} on={handleDelete}  />
         </div>
 <div>
- {/*  <CreateEmps s={setEmps} c={emps} /> */}
+  <CreateEmps s={setEmps} c={emps} />
 </div>
     </div>
   )
