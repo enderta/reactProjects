@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchEmps from './SearchEmps'
 import CreateEmps from './CreateEmps'
+import Tables from './Tables'
 const Company = () => {
     const [filter, setFilter] = React.useState([])
     const [search, setSearch] = React.useState('')
@@ -54,32 +55,7 @@ const handleDelete = (id) => {
     <div>
         <SearchEmps data={handleSearch} s={search} />
         <div>
-        <table className="table table-bordered table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Email</th>
-      <th scope='col'>Action</th>
-    </tr>
-  </thead>
-    <tbody>
-        {filter.map((item, index) => {
-            return (
-                <tr key={index}>
-                    <th scope="row">{index + 1}</th>
-                    <td>{item.firstName}</td>
-                    <td>{item.lastName}</td>
-                    <td>{item.emailId}</td>
-                    <td>
-                        <button /* onClick={handleDelete(item.id)} */   className="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-            )
-        })}
-    </tbody>
-</table>
+        <Tables data={emps} on={handleDelete}  />
         </div>
 <div>
  {/*  <CreateEmps s={setEmps} c={emps} /> */}
