@@ -20,7 +20,7 @@ const Tables = (props) => {
                 <th scope="row">{emp.id}</th>
                 <td>{emp.firstName}</td>
                 <td>{emp.lastName}</td>
-                <td>{emp.email_id}</td>
+                <td>{emp.emailId}</td>
                 <td> <button className="btn btn-danger" onClick={() => props.on(emp.id)}>Delete</button></td>
                 </tr>
         )

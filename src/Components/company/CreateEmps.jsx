@@ -13,7 +13,7 @@ myHeaders.append("Content-Type", "application/json");
   const newEmp = {
     firstName: firstName,
     lastName: lastName,
-    email_id: email
+    emailId: email
   }
   fetch('http://localhost:8080/api/v1/employees/', {
     method: 'POST',
