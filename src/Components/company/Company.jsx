@@ -1,10 +1,11 @@
 import React from 'react'
 import SearchEmps from './SearchEmps'
-
+import CreateEmps from './CreateEmps'
 const Company = () => {
     const [filter, setFilter] = React.useState([])
     const [search, setSearch] = React.useState('')
     const [emps, setEmps] = React.useState([])
+   
     
     React.useEffect(() => {
       let myHeaders = new Headers();
@@ -40,7 +41,13 @@ const handleSearch = (e) => {
     setFilter(filtered)
     
 }
-
+const handleDelete = (id) => {
+    const filtered = emps.filter((emp) => {
+        return emp.id !== id
+    })
+    setEmps(filtered)
+    setFilter(filtered)
+}
 
 
   return (
@@ -66,7 +73,7 @@ const handleSearch = (e) => {
                     <td>{item.lastName}</td>
                     <td>{item.emailId}</td>
                     <td>
-                        <button className="btn btn-danger">Delete</button>
+                        <button /* onClick={handleDelete(item.id)} */   className="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             )
@@ -74,6 +81,9 @@ const handleSearch = (e) => {
     </tbody>
 </table>
         </div>
+<div>
+ {/*  <CreateEmps s={setEmps} c={emps} /> */}
+</div>
     </div>
   )
 }
