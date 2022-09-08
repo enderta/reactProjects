@@ -23,25 +23,72 @@ myHeaders.append("Content-Type", "application/json");
   .then(response => response.json())
   .then((result)=>{
     props.s([...emp, result])
+    firstName('')
+    lastName('')
+    email('')
   })
   .catch(error => console.log('error', error));
   
   }
 
   return (
+    <>
     <div>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" className="form-control" id="firstName" placeholder="Enter First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" className="form-control" id="lastName" placeholder="Enter Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-          <label htmlFor="email">Email</label>
-          <input type="email" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <button type="submit" className="btn btn-primary">Submit</button>
-          </div>
+      <h1>Create A User</h1>
+    </div>
+    <div style={{"border":"solid 1px","width":"200%"}} >
+      <form onSubmit={handleSubmit} className="needs-validation" noValidate="">
+      <div className="form-row" >
+    <div className="col-md-4 mb-3" style={{"width":"100%"}}>
+      <label htmlFor="validationCustom01">First name</label>
+      <input
+        type="text"
+        className="form-control"
+        id="validationCustom01"
+        placeholder="First name"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        defaultValue="Mark"
+        required=""
+      />
+      <div className="valid-feedback">Looks good!</div>
+    </div>
+    <div className="col-md-4 mb-3" style={{"width":"100%"}}>
+      <label htmlFor="validationCustom02">Last name</label>
+      <input
+        type="text"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+        className="form-control"
+        id="validationCustom02"
+        placeholder="Last name"
+        defaultValue="Otto"
+        required=""
+      />
+      <div className="valid-feedback">Looks good!</div>
+    </div>
+    <div className="col-md-4 mb-3" style={{"width":"100%"}}>
+      <label htmlFor="validationCustom02">Email</label>
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="form-control"
+        id="validationCustom02"
+        placeholder="Email"
+        defaultValue="Otto"
+        required=""
+      />
+      <div className="valid-feedback">Looks good!</div>
+    </div>
+    </div>
+  <button className="btn btn-primary" type="submit">
+    Create a User
+  </button>
       </form>
     </div>
+    </>
+    
   )
 }
 

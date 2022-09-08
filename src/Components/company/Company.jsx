@@ -61,14 +61,22 @@ const handleDelete = (id) => {
 }
 
   return (
+    
     <div>
-        <SearchEmps data={handleSearch} s={search} />
-        <div>
-        <Tables data={emps} on={handleDelete}  />
-        </div>
-<div>
-  <CreateEmps s={setEmps} c={emps} />
+        <SearchEmps s={search} data={handleSearch} />
+        <div className="container">
+  <div className="row">
+    <div className="col">
+    <Tables data={emps} on={handleDelete} />
+    </div>
+    <div className="col" >
+    <CreateEmps s={setEmps} c={emps} />
+    </div>
+    <div  />
+    
+  </div>
 </div>
+
     </div>
   )
 }

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Tables = (props) => {
   return (
-    <div>
-        <table className="table table-bordered table-dark">
+    <div >
+        <table className="table table-sm table-dark" style={{"width":"1000px","height":"800px","margin":"2px"}}> 
   <thead>
     <tr>
       <th scope="col">#</th>
