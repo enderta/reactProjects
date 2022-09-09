@@ -27,8 +27,8 @@ const Tables = () => {
         console.log(inflation)
   return (
     <>
-    <div>
-    <table className="table table-sm table-dark" style={{"width":"1000px","height":"800px","margin":"2px"}}> 
+    <div >
+    <table className="table table-sm table-dark" > 
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -47,7 +47,7 @@ const Tables = () => {
             )
         })}
     </tbody>
-    
+
         </table>
     </div>
     </>

@@ -51,10 +51,9 @@ const Graphs = () => {
             };
   return (
     <div>
-         <Chart style={{"border":"1px solid "}}
+         <Chart 
     chartType="GeoChart"
-    width="100%"
-    height="50%"
+  
     data={data}
     options={options}
    />

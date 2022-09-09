@@ -13,13 +13,13 @@ export const MainApp = () => {
     <Tables />
      </div>
   <div className="div2"> 
-  <Lists />
-  </div>
-  <div className="div3"> 
   <Graphs />
   </div>
+  <div className="div3"> 
+  <Tables />
+  </div>
   <div className="div4">
-    <Create />
+  <Tables />
      </div>
 </div>
 
