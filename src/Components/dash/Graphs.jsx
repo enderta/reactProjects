@@ -53,7 +53,8 @@ const Graphs = () => {
     <div>
          <Chart 
     chartType="GeoChart"
-  
+    width="auto"
+    height="auto"
     data={data}
     options={options}
    />
