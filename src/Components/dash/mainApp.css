@@ -25,12 +25,15 @@
         width:100%;
         margin:0px;
         height:100%;
+        background: black;
         overflow:auto;
         resize:both}
     .div4 { grid-area: 2 / 2 / 3 / 3; 
         width:100%;
         margin:0px;
-        height:100%;
+        height:auto;
+        background: black;
+        border: 1px solid rgb(172, 12, 12) ;
         overflow:auto;
         resize:both}
 body{

@@ -19,7 +19,7 @@ export const MainApp = () => {
   <Lists />
   </div>
   <div className="div4">
-  <Tables />
+  <Create />
      </div>
 </div>
 
