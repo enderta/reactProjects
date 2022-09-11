@@ -56,7 +56,7 @@ const data = {
 const Lists = () => {
   return (
     <div>
- <Line options={options} data={data} />;
+ <Line options={options} data={data} />
     </div>
   )
 }
