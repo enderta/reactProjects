@@ -16,7 +16,7 @@ export const MainApp = () => {
   <Graphs />
   </div>
   <div className="div3"> 
-  <Tables />
+  <Lists />
   </div>
   <div className="div4">
   <Tables />
