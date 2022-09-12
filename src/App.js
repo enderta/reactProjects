@@ -1,13 +1,11 @@
 import React from 'react'
-import Company from './Components/company/Company'
-import SearchEmps from './Components/company/SearchEmps'
-import MainApp from './Components/dash/MainApp'
+import Courses from './Components/course/Courses'
 
 const App = () => {
   return (
     <div>
    
-   <MainApp />
+   <Courses />
     </div>
   )
 }
