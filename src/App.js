@@ -1,11 +1,11 @@
 import React from 'react'
-import Courses from './Components/course/Courses'
+import AirBnB from './Components/airbnb/AirBnB'
 
 const App = () => {
   return (
     <div>
    
-   <Courses />
+   <AirBnB />
     </div>
   )
 }

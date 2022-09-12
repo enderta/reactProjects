@@ -5,12 +5,14 @@
 body {
     margin: 0;
     font-family: Inter, sans-serif;
+    height: 100vh;
+    background-color: #282D35;
 }
 
 nav {
     display: flex;
     align-items: center;
-    background-color: #060a29;
+    background-color: #21222A;
     height: 90px;
     padding: 30px 25px;
 }
@@ -21,7 +23,7 @@ nav {
 
 .nav--logo_text {
     margin-right: auto;
-    color: #d1e5eb;
+    color: #61DAFB;
     font-weight: 700;
     font-size: 22px;
 }
@@ -34,4 +36,29 @@ nav {
 .nav--icon {
     height: 30px;
     margin-right: 7px;
+}
+
+main {
+    padding: 57px 27px;
+    color: white;
+}
+
+.main--title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+}
+
+.main--facts {
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.main--facts > li {
+    line-height: 19px;
+    padding-block: 10px;
+}
+.main--facts > li::marker {
+    font-size: 1.4rem;
+    color: #61DAFB;
 }
