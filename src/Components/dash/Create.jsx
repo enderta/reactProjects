@@ -7,9 +7,10 @@ import {
   Title,
   Tooltip,
   Legend,
+  LineElement,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-
+import { Line } from 'react-chartjs-2';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -87,7 +88,7 @@ const Create = () => {
   };
   return (
     <div>
-  <Bar options={options} data={data} />
+  <Line options={options} data={data} />
    </div>
   )
 }
