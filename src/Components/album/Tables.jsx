@@ -14,19 +14,19 @@ const Tables = () => {
             .then(json => setProducts(json.products))
 
     }, [])
-
+console.log(products)
 
 
     return (
         <div>
             <div className="album py-5 bg-light">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
                         {
                             products.map(product => (
                                 <div className="col">
-                                    <div className="card shadow-sm">
-                                        <img src={product.images[0]} alt="product" />
+                                    <div className="card shadow-sm" >
+                                        <img src={product.thumbnail} alt="product" style={{"height":"300px","width":"300px"}}  />
                                         <div className="card-body">
                                             <p className="card-text">{product.title}</p>
 
