@@ -2,11 +2,19 @@ import React from 'react';
 
 const Tables = () => {
     const [users, setUsers] = React.useState([]);
+    const [products, setProducts] = React.useState([]);
     React.useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => setUsers(json))
     }, [])
+    React.useEffect(() => {
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(json => setProducts(json.products))
+
+    }, [])
+
 
 
     return (
@@ -15,26 +23,26 @@ const Tables = () => {
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         {
-                            users.map(user => (
+                            products.map(product => (
                                 <div className="col">
                                     <div className="card shadow-sm">
+                                        <img src={product.images[0]} alt="product" />
                                         <div className="card-body">
-                                            <p className="card-text">{user.name}</p>
+                                            <p className="card-text">{product.title}</p>
+
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="btn-group">
-                                                    <button type="button" className="btn btn-sm btn-outline-secondary">
-                                                        View
-                                                    </button>
-                                                    <button type="button" className="btn btn-sm btn-outline-secondary">
-                                                        Edit
-                                                    </button>
+                                                    <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
+                                                    <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                                                 </div>
-                                                <small className="text-muted">{user.email}</small>
+                                                <small className="text-muted">{product.price}$</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             ))
+
+
 
                         }
                             </div>
