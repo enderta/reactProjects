@@ -21,6 +21,28 @@ function Dem(props) {
 
             <button onClick={handleMinus}><FontAwesomeIcon icon={faMinus}/></button>
             <button onClick={handleReset}><FontAwesomeIcon icon={faRedo}/></button>
+            <table className="table  table-dark table-striped">
+                <thead>
+                <tr>
+                    <th className={"border border-dark"}>Name</th>
+                    <th className={"border border-dark"}>Age</th>
+                    <th className={"border border-dark"}>Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td className={"border border-dark"}>Nguyen Van A</td>
+                    <td className={"border border-dark"}>20</td>
+                    <td className={"border border-dark"}>Ha Noi</td>
+                </tr>
+                <tr>
+                    <td className={"border border-dark"}>Nguyen Van B</td>
+                    <td className={"border border-dark"}>21</td>
+                    <td className={"border border-dark"}>Ha Noi</td>
+                </tr>
+                </tbody>
+            </table>
+
 
 
         </div>
