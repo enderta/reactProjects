@@ -5,11 +5,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import Dem from "./Components/dem";
 import Album from "./Components/album/Album";
+import SignIn from "./Components/album/SignIn";
 
 const App = () => {
     return (
         <div>
-           <Album/>
+           <SignIn />
         </div>
     )
 }
