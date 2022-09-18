@@ -1,5 +1,6 @@
 import React from 'react';
 import "./carousel.css"
+
 const Carosel = () => {
     return (
         <div>
@@ -34,23 +35,14 @@ const Carosel = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item">
-                        <svg
-                            className="bd-placeholder-img"
-                            width="100%"
-                            height="100%"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                        >
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
+                        <img className={"align-content-md-center w-100"} src="https://images.unsplash.com/photo-1563381013529-1c922c80ac8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80" alt="First slide" />
                         <div className="container">
                             <div className="carousel-caption text-start">
                                 <h1>Example headline.</h1>
                                 <p>
-                                    Some representative placeholder content for the first slide of the
-                                    carousel.
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                    Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
                                 </p>
                                 <p>
                                     <a className="btn btn-lg btn-primary" href="#">
@@ -61,23 +53,14 @@ const Carosel = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <svg
-                            className="bd-placeholder-img"
-                            width="100%"
-                            height="100%"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                        >
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
+                        <img className={"d-block w-100"} src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Second slide" />
                         <div className="container">
                             <div className="carousel-caption">
                                 <h1>Another example headline.</h1>
                                 <p>
-                                    Some representative placeholder content for the second slide of the
-                                    carousel.
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                    Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
                                 </p>
                                 <p>
                                     <a className="btn btn-lg btn-primary" href="#">
@@ -88,23 +71,14 @@ const Carosel = () => {
                         </div>
                     </div>
                     <div className="carousel-item active">
-                        <svg
-                            className="bd-placeholder-img"
-                            width="100%"
-                            height="100%"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                        >
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
+                        <img className={"d-block w-100"} src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Third slide" />
                         <div className="container">
                             <div className="carousel-caption text-end">
                                 <h1>One more for good measure.</h1>
                                 <p>
-                                    Some representative placeholder content for the third slide of this
-                                    carousel.
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                    Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
                                 </p>
                                 <p>
                                     <a className="btn btn-lg btn-primary" href="#">
@@ -115,13 +89,15 @@ const Carosel = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#myCarousel"
                     data-bs-slide="prev"
                 >
-                    <span className="carousel-control-prev-icon" aria-hidden="true" />
+                    <span className="carousel-control-prev-icon" aria-hidden="true"/>
                     <span className="visually-hidden">Previous</span>
                 </button>
                 <button
@@ -130,13 +106,14 @@ const Carosel = () => {
                     data-bs-target="#myCarousel"
                     data-bs-slide="next"
                 >
-                    <span className="carousel-control-next-icon" aria-hidden="true" />
+                    <span className="carousel-control-next-icon" aria-hidden="true"/>
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
 
-        </div>
-    );
+</div>
+)
+
 };
 
 export default Carosel;
