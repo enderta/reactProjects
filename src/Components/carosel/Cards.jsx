@@ -1,18 +1,36 @@
 import React from 'react';
-
+import Navbar from "./Navbar";
+import Carosel from "./Carosel";
 const Cards = () => {
-    const [movies, setMovies] = React.useState([]);
+    const [search, setSearch] = React.useState('');
+    const [movies, setMovie] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
 
-    React.useEffect(() => {
-        setLoading(true);
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=5f5f5e5d5f5e5d5f5e5d5f5e5d5f5e5d&language=en-US&page=1')
-            .then(response => response.json())
-            .then(json => setMovies(json.results))
-            .then(setLoading(false))
+React.useEffect(() => {
+    fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=batman`).then((res) => res.json()).then((data) => {
+setMovie(data.Search);
+        setLoading(false);
+    });
+
+
     }
-    , [])
-console.log(movies)
+    , []);
+    console.log(movies);
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search) {
+        setLoading(true);
+        fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=${search}`).then((res) => res.json()).then((data) => {
+            setMovie(data.Search);
+            setLoading(false);
+        });
+    }
+
+}
+const handleChange = (e) => {
+    setSearch(e.target.value);
+
+}
 
     return (
         <div>
@@ -24,16 +42,17 @@ console.log(movies)
                                 movies.map(product => (
                                     <div className="col">
                                         <div className="card shadow-sm" >
-                                            <img src={product.thumbnail} alt="product" style={{"height":"300px","width":"300px"}}  />
+                                            <img src={product.Poster} alt="product" style={{"height":"300px","width":"300px"}}  />
                                             <div className="card-body">
-                                                <p className="card-text">{product.title}</p>
+                                                <p className="card-text">{product.Title}</p>
 
                                                 <div className="d-flex justify-content-between align-items-center">
                                                     <div className="btn-group">
                                                         <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
                                                         <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                                                     </div>
-                                                    <small className="text-muted">{product.price}$</small>
+                                                    <small className="text-muted">Year: {product.Year}</small>
+                                                    <small className="text-muted">IMDb: {product.imdbID}</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -48,9 +67,12 @@ console.log(movies)
                 </div>
             </div>
 
-            );
+
+            <Navbar handleSubmit={handleSubmit} handleChange={handleChange} v={search} />
+            <Carosel d={movies} />
         </div>
     );
+
 };
 
 export default Cards;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
         <header>
         <div>
@@ -22,12 +23,15 @@ const Navbar = () => {
                     </button>
 
 
-                        <form className="d-flex" role="search">
+                        <form className="d-flex" role="search" onSubmit={props.handleSubmit} >
                             <input
                                 className="form-control me-2"
                                 type="search"
                                 placeholder="Search"
                                 aria-label="Search"
+                                value={props.search}
+                                onChange={props.handleChange}
+
                             />
                             <button className="btn btn-outline-success" type="submit">
                                 Search

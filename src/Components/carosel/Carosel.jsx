@@ -1,7 +1,7 @@
 import React from 'react';
 import "./carousel.css"
 
-const Carosel = () => {
+const Carosel = (props) => {
     return (
         <div>
             <div
@@ -35,7 +35,9 @@ const Carosel = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item">
-                        <img className={"align-content-md-center w-100"} src="https://images.unsplash.com/photo-1563381013529-1c922c80ac8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80" alt="First slide" />
+                        <img className={"align-content-md-center w-100"}
+                             src="https://images.unsplash.com/photo-1563381013529-1c922c80ac8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80"
+                             alt="First slide"/>
                         <div className="container">
                             <div className="carousel-caption text-start">
                                 <h1>Example headline.</h1>
@@ -53,7 +55,9 @@ const Carosel = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className={"d-block w-100"} src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Second slide" />
+                        <img className={"d-block w-100"}
+                             src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                             alt="Second slide"/>
                         <div className="container">
                             <div className="carousel-caption">
                                 <h1>Another example headline.</h1>
@@ -71,7 +75,9 @@ const Carosel = () => {
                         </div>
                     </div>
                     <div className="carousel-item active">
-                        <img className={"d-block w-100"} src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Third slide" />
+                        <img className={"d-block w-100"}
+                             src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                             alt="Third slide"/>
                         <div className="container">
                             <div className="carousel-caption text-end">
                                 <h1>One more for good measure.</h1>
@@ -111,9 +117,9 @@ const Carosel = () => {
                 </button>
             </div>
 
-</div>
-)
+        </div>
+    )
 
-};
+}
 
 export default Carosel;
