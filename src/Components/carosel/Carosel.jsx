@@ -7,7 +7,7 @@ const Carosel = (props) => {
     const [third, setThird] = React.useState('');
     // console.log(props.d[0].Poster);
     React.useEffect(() => {
-        fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=matrix`).then((res) => res.json()).then((data) => {
+        fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=matrix&p=100`).then((res) => res.json()).then((data) => {
                 setFirst(data.Search[0].Poster);
                 setSecond(data.Search[1].Poster);
                 setThird(data.Search[2].Poster);
