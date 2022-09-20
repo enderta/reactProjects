@@ -34,7 +34,11 @@ const handleChange = (e) => {
 
     return (
         <div>
-            <div>
+            <Navbar handleSubmit={handleSubmit} handleChange={handleChange} v={search} />
+
+
+<Carosel s={search}/>
+
                 <div className="album py-5 bg-light">
                     <div className="container">
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
@@ -47,10 +51,7 @@ const handleChange = (e) => {
                                                 <p className="card-text">{product.Title}</p>
 
                                                 <div className="d-flex justify-content-between align-items-center">
-                                                    <div className="btn-group">
-                                                        <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                                                        <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
-                                                    </div>
+
                                                     <small className="text-muted">Year: {product.Year}</small>
                                                     <small className="text-muted">IMDb: {product.imdbID}</small>
                                                 </div>
@@ -65,11 +66,11 @@ const handleChange = (e) => {
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <Navbar handleSubmit={handleSubmit} handleChange={handleChange} v={search} />
-            <Carosel d={movies} />
+
+
+
         </div>
     );
 

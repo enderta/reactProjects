@@ -7,15 +7,12 @@ import Cards from "./Cards";
 const MainCarosel = () => {
     return (
         <div>
-            <Navbar />
-           <div>
-               <main>
-                   <Carosel />
-                   <section>
+
+
+
+
                        <Cards />
-                   </section>
-               </main>
-           </div>
+
 
         </div>
     );

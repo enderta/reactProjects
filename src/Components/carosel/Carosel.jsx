@@ -2,6 +2,21 @@ import React from 'react';
 import "./carousel.css"
 
 const Carosel = (props) => {
+    const [first, setFirst] = React.useState('');
+    const [second, setSecond] = React.useState('');
+    const [third, setThird] = React.useState('');
+    // console.log(props.d[0].Poster);
+    React.useEffect(() => {
+        fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=matrix`).then((res) => res.json()).then((data) => {
+                setFirst(data.Search[0].Poster);
+                setSecond(data.Search[1].Poster);
+                setThird(data.Search[2].Poster);
+
+
+            }
+        );
+    }, []);
+
     return (
         <div>
             <div
@@ -36,7 +51,7 @@ const Carosel = (props) => {
                 <div className="carousel-inner">
                     <div className="carousel-item">
                         <img className={"align-content-md-center w-100"}
-                             src="https://images.unsplash.com/photo-1563381013529-1c922c80ac8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80"
+                             src={first}
                              alt="First slide"/>
                         <div className="container">
                             <div className="carousel-caption text-start">
@@ -56,7 +71,7 @@ const Carosel = (props) => {
                     </div>
                     <div className="carousel-item">
                         <img className={"d-block w-100"}
-                             src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                             src={second}
                              alt="Second slide"/>
                         <div className="container">
                             <div className="carousel-caption">
@@ -76,7 +91,7 @@ const Carosel = (props) => {
                     </div>
                     <div className="carousel-item active">
                         <img className={"d-block w-100"}
-                             src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                             src={third}
                              alt="Third slide"/>
                         <div className="container">
                             <div className="carousel-caption text-end">
