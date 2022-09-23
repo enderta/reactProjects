@@ -3,29 +3,33 @@ import './mason.css'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 const Mason = () => {
-    const [prods, setProds] = React.useState([]);
+    const [movies,setMovie ] = React.useState([]);
     React.useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then(json => setProds(json.products))
+            fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=batman&p=100`).then((res) => res.json()).then((data) => {
+                setMovie(data.Search);
 
-    }
+            });
+
+
+        }
     , [])
 
     return (
         <div>
-            <Masonry columnsCount={3} gutter="10px">
-                {
-                    prods.map((image, i) => (
+            <ResponsiveMasonry
+                columnsCountBreakPoints={{350: 2, 750: 3, 900: 5}}
+            >
+                <Masonry>
+                    {movies.map((image, i) => (
                         <img
                             key={i}
-                            src={image.thumbnail}
+                            src={image.Poster}
                             style={{width: "100%", display: "block"}}
+                            alt=""
                         />
-                    ))
-
-                }
-            </Masonry>
+                    ))}
+                </Masonry>
+            </ResponsiveMasonry>
         </div>
     );
 };

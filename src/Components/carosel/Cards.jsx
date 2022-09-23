@@ -7,13 +7,13 @@ const Cards = () => {
     const [loading, setLoading] = React.useState(false);
 
 React.useEffect(() => {
-    fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=batman&p=100`).then((res) => res.json()).then((data) => {
-setMovie(data.Search);
-        setLoading(false);
-    });
+        fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=batman&p=100`).then((res) => res.json()).then((data) => {
+    setMovie(data.Search);
+            setLoading(false);
+        });
 
 
-    }
+        }
     , []);
     console.log(movies);
 const handleSubmit = (e) => {
