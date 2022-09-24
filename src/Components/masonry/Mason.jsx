@@ -21,7 +21,7 @@ const Mason = () => {
            <Masonry columns={4} spacing={2}>
         {prods.map((item) => (
             <Box key={item.id} sx={{ height: heights[Math.floor(Math.random() * heights.length)] }}>
-            <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>
+            <Paper elevation={1} sx={{ p: 2, bgcolor: 'grey.200' }}>
                 <img src={item.thumbnail} alt="product" style={{ "height": "300px", "width": "300px" }} />
                 <div className="card-body">
                     <p className="card-text">{item.title}</p>
