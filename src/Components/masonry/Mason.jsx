@@ -1,37 +1,44 @@
-import React from 'react';
-import './mason.css'
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Masonry from '@mui/lab/Masonry';
+
+const heights = [150, 200, 250, 300, 350, 400, 450, 500];
 
 const Mason = () => {
-    const [movies,setMovie ] = React.useState([]);
+    const [prods, setProds] = React.useState([]);
     React.useEffect(() => {
-            fetch(`https://www.omdbapi.com/?apikey=9f4b46a&s=batman&p=100`).then((res) => res.json()).then((data) => {
-                setMovie(data.Search);
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(json => setProds(json.products))
 
-            });
-
-
-        }
+    }
     , [])
 
     return (
         <div>
-            <ResponsiveMasonry
-                columnsCountBreakPoints={{350: 2, 750: 3, 900: 5}}
-            >
-                <Masonry>
-                    {movies.map((image, i) => (
-                        <img
-                            key={i}
-                            src={image.Poster}
-                            style={{width: "100%", display: "block"}}
-                            alt=""
-                        />
-                    ))}
-                </Masonry>
-            </ResponsiveMasonry>
+           <Masonry columns={4} spacing={2}>
+        {prods.map((item) => (
+            <Box key={item.id} sx={{ height: heights[Math.floor(Math.random() * heights.length)] }}>
+            <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>
+                <img src={item.thumbnail} alt="product" style={{ "height": "300px", "width": "300px" }} />
+                <div className="card-body">
+                    <p className="card-text">{item.title}</p>
+                </div>
+            </Paper>
+            </Box>
+        ))}
+    </Masonry>
+
+
+
         </div>
     );
+
+
 };
+
+
 
 export default Mason;
