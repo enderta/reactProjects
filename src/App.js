@@ -72,6 +72,12 @@ const App = () => {
                         )}
                 </ul>
             </div>
+            <div className={"fav"}>
+                <ul className={"list"}>
+                    <li>{fav.title} {fav.director} {fav.type} {fav.haveWatched}</li>
+                </ul>
+            </div>
+            <h1>number of movies: {mov.length}</h1>
         </div>
 
     );
