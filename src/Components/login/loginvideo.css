@@ -60,5 +60,8 @@ form a{
     text-decoration: none;
 }
 form a:hover{
-    color: #262521;
+    color: #ffc107;
+}
+::placeholder{
+    color: #721b8f;
 }
