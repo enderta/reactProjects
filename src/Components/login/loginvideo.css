@@ -23,7 +23,7 @@ form{
 form h1{
     margin: 0;
     padding: 0 0 20px;
-    color: #131212;
+    color: #ffffff;
     text-align: center;
 }
 form input{
@@ -32,29 +32,33 @@ form input{
 }
 form input[type="text"], form input[type="password"]{
     border: none;
-    border-bottom: 1px solid #151313;
+    border-bottom: 1px solid #ffffff;
     background: transparent;
     outline: none;
     height: 40px;
-    color: #171515;
+    color: #ffffff;
     font-size: 16px;
 }
 form input[type="submit"]{
-    border: none;
-    outline: none;
+
     height: 40px;
-    background: #fb2525;
-    color: #171616;
+    background: #ffffff;
+    color: #ffffff;
     font-size: 18px;
-    border-radius: 20px;
+
 }
-form input[type="submit"]:hover{
+button{
+    background: transparent;
+    border: 1px solid #ffffff;
+    outline: none;
+    color: #ffffff;
+
+    padding: 10px 20px;
     cursor: pointer;
-    background: #131311;
-    color: #000;
+    border-radius: 5px;
 }
 
 
 ::placeholder{
-    color: #721b8f;
+    color: #ffffff;
 }

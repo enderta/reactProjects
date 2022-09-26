@@ -4,35 +4,47 @@ import './loginvideo.css'
 const LoginVideo = () => {
     const [user, setUser] = React.useState(null);
     const [password, setPassword] = React.useState(null);
+    const handleChage = (e) => {
+        e.preventDefault();
+        if (e.target.name === "user") {
+            setUser(e.target.value);
 
+        } else if (e.target.name === "password") {
+            setPassword(e.target.value);
+
+        }
+
+
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(user, password);
+
+    }
 
     return (
         <div>
             <video autoPlay="autoplay" loop='loop' muted>
                 <source
-                    src={require('../Clouds - 64759.mp4')}
+                    src={require('../VZ_HD_004_RED.mp4')}
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
             </video>
-            <form>
-                <h1>Login</h1>
+            <form onChange={handleChage} onSubmit={handleSubmit}>
+                <h1></h1>
                 <input
                     type="text"
                     placeholder="Username"
-                    onChange={(e) => setUser(e.target.value)}
+                    name="user"
                 />
                 <input
                     type="password"
                     placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    name="password"
                 />
                 <button
                     type="submit"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log(user, password);
-                    }}
                 >
                     Login
                 </button>
