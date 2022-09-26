@@ -53,15 +53,8 @@ form input[type="submit"]:hover{
     background: #131311;
     color: #000;
 }
-form a{
-    color: #1e1c1c;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-}
-form a:hover{
-    color: #ffc107;
-}
+
+
 ::placeholder{
     color: #721b8f;
 }
