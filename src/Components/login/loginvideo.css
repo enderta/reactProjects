@@ -1,0 +1,64 @@
+video{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    float: left;
+    zIndex: -1;
+    padding: 0;
+    margin: 0;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
+}
+form h1{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #131212;
+    text-align: center;
+}
+form input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+form input[type="text"], form input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #151313;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #171515;
+    font-size: 16px;
+}
+form input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #171616;
+    font-size: 18px;
+    border-radius: 20px;
+}
+form input[type="submit"]:hover{
+    cursor: pointer;
+    background: #131311;
+    color: #000;
+}
+form a{
+    color: #1e1c1c;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+form a:hover{
+    color: #262521;
+}
