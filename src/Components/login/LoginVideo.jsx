@@ -4,22 +4,17 @@ import './loginvideo.css'
 const LoginVideo = () => {
     const [user, setUser] = React.useState(null);
     const [password, setPassword] = React.useState(null);
-    const handleChage = (e) => {
+    const handleChange = (e) => {
         e.preventDefault();
         if (e.target.name === "user") {
             setUser(e.target.value);
-
         } else if (e.target.name === "password") {
             setPassword(e.target.value);
-
         }
-
-
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(user, password);
-
     }
 
     return (
@@ -31,8 +26,7 @@ const LoginVideo = () => {
                 />
                 Your browser does not support the video tag.
             </video>
-            <form onChange={handleChage} onSubmit={handleSubmit}>
-                <h1></h1>
+            <form onChange={handleChange} onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Username"
