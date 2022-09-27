@@ -1,52 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './card.css'
+import InfoCard from "./InfoCard";
 
 const Card = () => {
-    const [showAge, setShowAge] = React.useState(false);
-    const [contacts, setContact] = React.useState([])
-    React.useEffect(() => {
+    const [contacts, setContacts] = useState([]);
+
+    useEffect(() => {
         fetch('https://randomuser.me/api/?results=10')
-            .then(res => res.json())
-
-            .then(json => setContact(json.results)
-
-            )
-    }, [])
-
-
-
-    console.log(contacts)
+            .then((response) => response.json())
+            .then((data) => {
+                setContacts(data.results);
+            });
+    }, []);
+    console.log(contacts);
     return (
-  <>
-        <div className="container">
-            {
-                contacts.map(contact => (
-                    <div className="card">
-                        <div className="card-body">
-                            <div className="row">
-                                <div className="col-md-3">
-                                    <img src={contact.picture.large} alt="user" className="img-fluid" />
-                                </div>
-                                <div className="col-md-9">
-                                    <h4>{contact.name.first} {contact.name.last}</h4>
-                                    <p>{contact.email}</p>
-                                    <p>{contact.phone}</p>
-                                    <p>{contact.location.city}</p>
-                                    <p>{contact.location.country}</p>
-                                    <button className="btn btn-primary" onClick={() => setShowAge(!showAge)}>Show Age</button>
-                                    {showAge && <p>{contact.dob.age}</p>}
+        <>
+            {contacts.map((contact) => (
+                <InfoCard
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))
+                    avatar={contact.picture.large}
+                    name={contact.name.first + ' ' + contact.name.last}
+                    email={contact.email}
+                    age={contact.dob.age}
 
-            }
-        </div>
+                />
+            ))}
+        </>
 
-  </>
     );
+
 };
 
 export default Card;
