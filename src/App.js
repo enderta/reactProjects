@@ -5,7 +5,7 @@ import Card from "./Components/contact/Card";
 const App = () => {
     return (
         <div>
-          <Card/>
+        <Card />
         </div>
     );
 };
