@@ -4,6 +4,11 @@ import './loginvideo.css'
 const LoginVideo = () => {
     const [user, setUser] = React.useState(null);
     const [password, setPassword] = React.useState(null);
+    const [search, setSearch] = React.useState('');
+
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+    }
     const handleChange = (e) => {
         e.preventDefault();
         if (e.target.name === "user") {
@@ -16,9 +21,17 @@ const LoginVideo = () => {
         e.preventDefault();
         console.log(user, password);
     }
-
     return (
         <div>
+
+                <div className="search">
+                    <form onChange={handleSearch}>
+                        <input type="text" placeholder="Search" />
+                        <button type="submit">Search</button>
+
+                    </form>
+                </div>
+
             <video autoPlay="autoplay" loop='loop' muted>
                 <source
                     src={require('../VZ_HD_004_RED.mp4')}
@@ -26,6 +39,7 @@ const LoginVideo = () => {
                 />
                 Your browser does not support the video tag.
             </video>
+
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <input
                     type="text"
