@@ -1,11 +1,15 @@
 import React from 'react';
-import LoginVideo from "./Components/login/LoginVideo";
-import Card from "./Components/contact/Card";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button, Card, Stack} from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Album from "./Components/album/Album";
 const App = () => {
+
     return (
         <div>
-        <Card />
+          <Album/>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './card.css'
 import InfoCard from "./InfoCard";
+import GridCard from "./GridCard";
 
 const Card = () => {
     const [contacts, setContacts] = useState([]);
@@ -16,7 +17,7 @@ const Card = () => {
     return (
         <>
             {contacts.map((contact) => (
-                <InfoCard
+                <GridCard
 
                     avatar={contact.picture.large}
                     name={contact.name.first + ' ' + contact.name.last}

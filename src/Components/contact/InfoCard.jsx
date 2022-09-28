@@ -4,8 +4,8 @@ const InfoCard = (props) => {
     const [showAge, setShowAge] = useState(false);
     return (
         <div >
-            <div className="container d-grid " >
-                <div className="card  p-3 mb-2 bg-warning" style={{ maxWidth: "50rem"}}>
+            <div className="container ">
+                <div className="card  p-3 mb-2 bg-warning" style={{ maxWidth: "50rem" }}>
                    {/* <div className="card-header">{props.name}</div>*/}
                     <div className="card-body">
                         <img src={props.avatar} alt="avatar" />
