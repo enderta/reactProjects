@@ -3,12 +3,13 @@ import Header from "./Header";
 import Tables from "./Tables";
 import Footer from "./Footer";
 import Goods from "./Goods";
+import Cards from '../contact/Card';
 
 const Album = () => {
     return (
         <div>
             <Header/>
-           <Tables/>
+           <Cards />
             <Footer/>
 
         </div>

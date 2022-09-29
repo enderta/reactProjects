@@ -57,18 +57,7 @@ button{
     cursor: pointer;
     border-radius: 5px;
 }
-.search{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    background: black;
-    box-sizing: border-box;
-    padding: 40px;
-    border-radius: 10px;
-}
+
 
 ::placeholder{
     color: #ffffff;
