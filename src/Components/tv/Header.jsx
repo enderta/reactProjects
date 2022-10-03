@@ -71,8 +71,8 @@ const Header = () => {
             <div id="shows">
                 {
                     filtered.map((item) => (
-                        <div key={item.id} className="show">
-                            <img src={item.image.medium} alt={item.name}/>
+                        <div key={item.id} className="show" style={{"height":"100%","width":"100%"}}>
+                            <img src={item.image.medium} alt={item.name} style={{"height":"300px","width":"300px"}}/>
                             <h2>{item.name}</h2>
                             <p>{item.summary}</p>
                             <p>{item.genres[0]}</p>
