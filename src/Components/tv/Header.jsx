@@ -11,16 +11,16 @@ const Header = () => {
         setSearch(event.target.value);
 
     }
-   React.useEffect(() => {
-       fetch(`https://api.tvmaze.com/shows`)
-.then(res => res.json())
-.then(data => {
+    React.useEffect(() => {
+        fetch(`https://api.tvmaze.com/shows`)
+            .then(res => res.json())
+            .then(data => {
 
-    setSearchResults(data);
-    setOpt(data);
-}
-)
-   }, [])
+                    setSearchResults(data);
+                    setOpt(data);
+                }
+            )
+    }, [])
 
     console.log(searchResults.map((item) => item.name));
     React.useEffect(() => {
@@ -31,7 +31,7 @@ const Header = () => {
                 }
             );
     }, []);
-let filtered=searchResults.filter((item) => item.genres.includes(search)||item.name.includes(search));
+    let filtered = searchResults.filter((item) => item.genres.includes(search) || item.name.includes(search));
 
 
     return (
@@ -49,10 +49,10 @@ let filtered=searchResults.filter((item) => item.genres.includes(search)||item.n
 
                 />
                 <div className="control" id="filterSummary">
-                   <h1>{opt.length}</h1>
+                    <h1>{opt.length}</h1>
                 </div>
                 <select id="showSelect">
-                    {opt.map((item) =>(
+                    {opt.map((item) => (
                         <option key={item.id} value={item.id}>{item.name}</option>
                     ))}
                     )}
@@ -65,15 +65,15 @@ let filtered=searchResults.filter((item) => item.genres.includes(search)||item.n
                             <img src={item.image.medium} alt={item.name}/>
                             <h2>{item.name}</h2>
                             <p>{item.summary}</p>
-                            {
-                                item.genres.map((genre) => (
-                                    <span key={genre} className="genre">{genre}</span>
-                                ))
-                            }
+                            <p>{item.genres[0]}</p>
+                            <p>{item.genres[1]}</p>
+                            <p>{item.genres[2]}</p>
+
                         </div>
                     ))
 
                 }
+
             </div>
 
         </div>
