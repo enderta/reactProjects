@@ -31,9 +31,8 @@ const Header = () => {
                 }
             );
     }, []);
-    let filtered = searchResults.filter((item) => item.genres.includes(search) || item.name.includes(search));
 
-
+   let filtered=search.length===0?searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||item.name.toLowerCase().includes(search.toLowerCase()));
     return (
         <div>
             <div id="controlPanel">
