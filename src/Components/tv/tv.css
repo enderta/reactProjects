@@ -169,15 +169,11 @@ input {
 
 .control {
     padding: 10px;
-    margin: 10px 10px 0 10px;
+    margin: 1px 1px 0 1px;
+    height: 40px;
+
 }
 
-#filterSummary::before {
-    content: "found ";
-}
-#filterSummary::after {
-    content: " shows";
-}
 
 #loadingNotice {
     padding: 200px;
@@ -202,9 +198,15 @@ header {
 
 header h1 {
     color: white;
-    text-align: center;
+    text-align: right;
     padding: 0;
     margin: 0;
-    font-size: 3rem;
+
     min-width: 80%;
+    font-size: 3rem;
+}
+h1{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
 }

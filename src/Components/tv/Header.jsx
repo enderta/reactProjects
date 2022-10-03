@@ -32,7 +32,9 @@ const Header = () => {
             );
     }, []);
 
-   let filtered=search.length===0?searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||item.name.toLowerCase().includes(search.toLowerCase()));
+   let filtered=search.length===0?
+       searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||
+           item.name.toLowerCase().includes(search.toLowerCase()));
     return (
         <div>
             <div id="controlPanel">
@@ -47,9 +49,9 @@ const Header = () => {
                     value={search}
 
                 />
-                <div className="control" id="filterSummary">
-                    <h1>{opt.length}</h1>
-                </div>
+                <span className="control" id="filterSummary">
+                    <h1>found: {opt.length} shows</h1>
+                </span>
                 <select id="showSelect">
                     {opt.map((item) => (
                         <option key={item.id} value={item.id}>{item.name}</option>
