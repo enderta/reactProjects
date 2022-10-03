@@ -38,20 +38,28 @@ const Header = () => {
     return (
         <div>
             <div id="controlPanel">
-                <span className="control">Filtering for </span>
-                <input
-                    id="showsSearchInput"
-                    className="control"
-                    type="text"
-                    placeholder="search for a show"
-                    defaultValue="mystery"
-                    onChange={handleChange}
-                    value={search}
-
-                />
-                <span className="control" id="filterSummary">
-                    <h1>found: {opt.length} shows</h1>
+                <span >
+                    <h1>Found: {opt.length} shows</h1>
                 </span>
+
+
+            </div>
+            <div>
+                <span ><h1>Search</h1> </span>
+                <div style={{"margin":"3px"}}>
+                    <input
+                        id="showsSearchInput"
+                        className="control"
+                        type="text"
+                        placeholder="search for a show"
+                        defaultValue="mystery"
+                        onChange={handleChange}
+                        value={search}
+
+                    />
+                </div>
+            </div>
+            <div>
                 <select id="showSelect">
                     {opt.map((item) => (
                         <option key={item.id} value={item.id}>{item.name}</option>
@@ -59,6 +67,7 @@ const Header = () => {
                     )}
                 </select>
             </div>
+
             <div id="shows">
                 {
                     filtered.map((item) => (
