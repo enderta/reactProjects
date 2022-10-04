@@ -1,10 +1,12 @@
 import React from 'react';
 import './tv.css'
-
 const Header = () => {
-    const [search, setSearch] = React.useState('Adventure');
+    const [search, setSearch] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
     const [opt, setOpt] = React.useState([]);
+    const [id, setId] = React.useState(1);
+
+
 
 
     const handleChange = (event) => {
@@ -22,15 +24,7 @@ const Header = () => {
             )
     }, [])
 
-    console.log(searchResults.map((item) => item.name));
-    React.useEffect(() => {
-        fetch(`https://api.tvmaze.com/shows`)
-            .then(response => response.json())
-            .then(data => {
-                    setOpt(data);
-                }
-            );
-    }, []);
+    console.log();
 
    let filtered=search.length===0?
        searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||
@@ -39,7 +33,7 @@ const Header = () => {
         <div>
             <div id="controlPanel">
                 <span >
-                    <h1>Found: {opt.length} shows</h1>
+                    <h1>Found: {filtered.length} shows</h1>
                 </span>
 
 
@@ -60,12 +54,12 @@ const Header = () => {
                 </div>
             </div>
             <div>
-                <select id="showSelect">
-                    {opt.map((item) => (
-                        <option key={item.id} value={item.id}>{item.name}</option>
-                    ))}
-                    )}
-                </select>
+               {/* <select id="showSelect">
+                    {Array.from(new Set(searchResults.flatMap(x => x.genres))).map((item, index) => {
+                        return <option key={index} value={item}>{item}</option>
+                    })}
+                    }
+                </select>*/}
             </div>
 
             <div id="shows">
@@ -74,17 +68,20 @@ const Header = () => {
                         <div key={item.id} className="show" style={{"height":"100%","width":"100%"}}>
                             <img src={item.image.medium} alt={item.name} style={{"height":"300px","width":"300px"}}/>
                             <h2>{item.name}</h2>
-                            <p>{item.summary}</p>
-                            <p>{item.genres[0]}</p>
-                            <p>{item.genres[1]}</p>
-                            <p>{item.genres[2]}</p>
+                            <p >{item.summary}</p>
+                            <p style={{"padding":"0","fontWeight":"bolder"}}>Genres:</p>
+                            <p style={{"padding":"0"}}>{item.genres[0]}</p>
+                            <p style={{"padding":"0"}}>{item.genres[1]}</p>
+                            <p style={{"padding":"0"}}>{item.genres[2]}</p>
 
                         </div>
                     ))
 
                 }
 
+
             </div>
+
 
         </div>
     );
