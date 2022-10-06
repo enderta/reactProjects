@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from "./Components/contact/Card";
 import LoginVideo from "./Components/login/LoginVideo";

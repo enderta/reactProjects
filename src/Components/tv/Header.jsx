@@ -1,11 +1,10 @@
 import React from 'react';
-import './tv.css'
 import DropDown from "./DropDown";
 const Header = () => {
     const [search, setSearch] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
     const [opt, setOpt] = React.useState([]);
-    const [id, setId] = React.useState(1);
+
 
 
 
@@ -28,71 +27,67 @@ const Header = () => {
     console.log();
 
    let filtered=search.length===0?
-       searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||
+       searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.substring(1).toLowerCase())||
            item.name.toLowerCase().includes(search.toLowerCase()))||opt.filter((item) => item.genres.includes(search));
     return (
         <div>
-            <navbar className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">TV Shows</a>
-                    <form className="d-flex" role="search" onSubmit={handleChange} >
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                            value={search}
-                            onChange={handleChange}
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="input-group mb-3">
+                            <input type="text" className="form-control" placeholder="Search"
+                                      aria-label="Recipient's username" aria-describedby="button-addon2"
+                                        value={search}
+                                        onChange={handleChange}
                             />
-                    </form>
 
-
-                </div>
-            </navbar>
-
-            <div>
-
-            </div>
-            <div id="controlPanel">
-                <span >
-                    <h1>Found: {filtered.length} shows</h1>
-                </span>
-
-
-            </div>
-
-            <div>
-                <select id="showSelect" onChange={handleChange}>
-                    {Array.from(new Set(searchResults.flatMap(x => x.genres))).map((item, index) => {
-                        return <option key={index} value={item}>{item}</option>
-                    })}
-                    }
-                </select>
-            </div>
-
-            <div id="shows">
-                {
-                    filtered.map((item) => (
-                        <div key={item.id} className="show" style={{"height":"100%","width":"100%"}}>
-                            <img src={item.image.medium} alt={item.name} style={{"height":"300px","width":"300px"}}/>
-                            <h2>{item.name}</h2>
-                            <p >{item.summary}</p>
-                            <p style={{"padding":"0","fontWeight":"bolder"}}>Genres:</p>
-                            <p style={{"padding":"0"}}>{item.genres[0]}</p>
-                            <p style={{"padding":"0"}}>{item.genres[1]}</p>
-                            <p style={{"padding":"0"}}>{item.genres[2]}</p>
 
                         </div>
-                    ))
+                        <div>
+                            <select id="showSelect" onChange={handleChange}>
+                                {Array.from(new Set(searchResults.flatMap(x => x.genres))).map((item, index) => {
+                                    return <option key={index} value={item}>{item}</option>
+                                })}
+                                }
+                            </select>
+                        </div>
+                        <span >
+                    <p>Found: {filtered.length} shows</p>
+                </span>
 
-                }
+                    </div>
+                </div>
+                <body>
 
+                <div className="row" style={{width: '100%',"margin":"3px"}}>
+                    {filtered.map((item) => (
+                        <div className="col-3"  >
+                            <div className="card"  style={{"margin":"2px"}}>
+                                <img src={item.image.medium} className="card-img-top" alt="..."/>
+                                <div className="card-body">
 
+                                    <p style={{"padding":"0","fontWeight":"bolder"}}>Genres:</p>
+                                    <p style={{"padding":"0"}}>{item.genres[0]}</p>
+                                    <p style={{"padding":"0"}}>{item.genres[1]===undefined?"Drama":item.genres[1]}</p>
+                                    <p style={{"padding":"0"}}>{
+                                        item.genres[2]===undefined?"Action":item.genres[2]
+
+                                    }
+
+                                    </p>
+                                    <a href={item.url} className="btn btn-primary">Episodes</a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                </body>
             </div>
-
 
         </div>
     );
-};
+}
+
 
 export default Header;
