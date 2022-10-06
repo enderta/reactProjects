@@ -32,6 +32,24 @@ const Header = () => {
            item.name.toLowerCase().includes(search.toLowerCase()))||opt.filter((item) => item.genres.includes(search));
     return (
         <div>
+            <navbar className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="#">TV Shows</a>
+                    <form className="d-flex" role="search" onSubmit={handleChange} >
+                        <input
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            value={search}
+                            onChange={handleChange}
+                            />
+                    </form>
+
+
+                </div>
+            </navbar>
+
             <div>
 
             </div>
@@ -42,21 +60,7 @@ const Header = () => {
 
 
             </div>
-            <div>
-                <span ><h1>Search</h1> </span>
-                <div style={{"margin":"3px"}}>
-                    <input
-                        id="showsSearchInput"
-                        className="control"
-                        type="text"
-                        placeholder="search for a show"
-                        defaultValue="mystery"
-                        onChange={handleChange}
-                        value={search}
 
-                    />
-                </div>
-            </div>
             <div>
                 <select id="showSelect" onChange={handleChange}>
                     {Array.from(new Set(searchResults.flatMap(x => x.genres))).map((item, index) => {
