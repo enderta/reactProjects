@@ -1,5 +1,6 @@
 import React from 'react';
 import './tv.css'
+import DropDown from "./DropDown";
 const Header = () => {
     const [search, setSearch] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
@@ -28,9 +29,12 @@ const Header = () => {
 
    let filtered=search.length===0?
        searchResults: searchResults.filter((item)=>item.genres.includes(search[0].toUpperCase()+search.slice(1).toLowerCase())||
-           item.name.toLowerCase().includes(search.toLowerCase()));
+           item.name.toLowerCase().includes(search.toLowerCase()))||opt.filter((item) => item.genres.includes(search));
     return (
         <div>
+            <div>
+
+            </div>
             <div id="controlPanel">
                 <span >
                     <h1>Found: {filtered.length} shows</h1>
@@ -54,12 +58,12 @@ const Header = () => {
                 </div>
             </div>
             <div>
-               {/* <select id="showSelect">
+                <select id="showSelect" onChange={handleChange}>
                     {Array.from(new Set(searchResults.flatMap(x => x.genres))).map((item, index) => {
                         return <option key={index} value={item}>{item}</option>
                     })}
                     }
-                </select>*/}
+                </select>
             </div>
 
             <div id="shows">
