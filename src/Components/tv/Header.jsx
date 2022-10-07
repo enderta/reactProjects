@@ -6,7 +6,7 @@ const Header = () => {
     const [search, setSearch] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
     const [opt, setOpt] = React.useState([]);
-    const[clicked, setClicked] = React.useState(false);
+
 
     const handleChange = (event) => {
         setSearch(event.target.value);
@@ -23,8 +23,6 @@ const Header = () => {
             )
     }, [])
 
-    console.log();
-
     let filtered = search.length === 0 ?
         searchResults : searchResults.filter((item) => item.genres.includes(search[0].toUpperCase() + search.substring(1).toLowerCase()) ||
         item.name.toLowerCase().includes(search.toLowerCase())) || opt.filter((item) => item.genres.includes(search));
@@ -39,6 +37,7 @@ const Header = () => {
                                    value={search}
                                    onChange={handleChange}
                             />
+
                         </div>
                         <div>
                             <select id="showSelect" onChange={handleChange}>
@@ -47,6 +46,7 @@ const Header = () => {
                                 })}
                                 }
                             </select>
+
                         </div>
                         <span>
                     <p>Found: {filtered.length} shows</p>
@@ -68,27 +68,19 @@ const Header = () => {
                                         item.genres[2] === undefined ? "Action" : item.genres[2]
                                     }
                                     </p>
-                                   <a className={"btn btn-primary"} href={`https://www.imdb.com/title/${item.externals.imdb}`}>IMDB</a>
                                     <ul>
                                         <li>
                                             <a href={`https://www.imdb.com/title/${item.externals.imdb}`}>IMDB</a>
                                         </li>
                                         <li>
-                                            {/*go to episodes component 0n click*/}
-                                            <a href="#" onClick={() => setClicked(true)}>Episodes</a>
-
-
-
-
-
-
+                                            <a href="/episodes">Episodes</a>
                                         </li>
                                     </ul>
-
-
                                 </div>
                             </div>
+
                         </div>
+
                     ))}
                 </div>
                 </body>

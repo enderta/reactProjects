@@ -8,12 +8,13 @@ const MainTv = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#"  >Home</a>
+                    <a className="navbar-brand" href="/"  >Home</a>
+
                 </div>
             </nav>
             <Routes>
                 <Route path="/" element={<Header />} />
-                <Route path="/:id" element={<Episodes />} />
+                <Route path="/episodes" element={<Episodes />} />
             </Routes>
 
 

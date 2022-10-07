@@ -3,10 +3,15 @@ import Header from "./Header";
 
 const Episodes = (props) => {
     const [eps, setEps] = React.useState([]);
+    const [id, setId] = React.useState('1');
+
+    const handleChange = (event) => {
+        setId(event.target.value);
+    }
 
 
     React.useEffect(() => {
-        fetch(`https://api.tvmaze.com/shows/${props.id}/episodes`)
+        fetch(`https://api.tvmaze.com/shows/${id}/episodes`)
             .then(res => res.json())
             .then(data => {
                 setEps(data);
@@ -17,34 +22,31 @@ const Episodes = (props) => {
 
     return (
         <div>
-            <div onClick={props.close} className="close">X</div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-12">
-                        <div className="input-group mb-2">
-                            <input type="text" className="form-control" placeholder="Search"
-                                      aria-label="Recipient's username" aria-describedby="button-addon2"
-                                        value={props.search}
-                                        onChange={props.handleChange}
-                            />
-                            <div>
-                                {
-                                    eps.map((item) => (
-                                        <div className="card" style={{"margin": "2px"}}>
-                                            <div className="card-body">
-                                                <h5 className="card-title">{item.name}</h5>
-                                                <p className="card-text">{item.summary}</p>
-                                            </div>
-                                        </div>
-                                    ))
 
-                                }
+        <div className="row" style={{width: '100%', "margin": "3px"}} >
+            {eps.map((item) => (
+                <div className="col-3">
+                    <div className="card" style={{"margin": "2px"}}>
+                        <img src={item.image.medium} className="card-img-top" alt="..."/>
+                        <div className="card-body">
 
-</div>
-        </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Name: {item.name}</h5>
+                                <p className="card-text">Season: {item.season}</p>
+                                <p className="card-text">Episode: {item.number}</p>
+                                <p className="card-text">Airdate: {item.airdate}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            ))}
+        </div>
+
+
+
+
+
+
         </div>
     );
 };
