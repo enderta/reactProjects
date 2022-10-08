@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router";
 import Header from "./Header";
 import Episodes from "./Episodes";
+import ButtonTo from "./ButtonTo";
 
 const MainTv = () => {
     return (
@@ -12,10 +13,13 @@ const MainTv = () => {
 
                 </div>
             </nav>
+
             <Routes>
                 <Route path="/" element={<Header />} />
                 <Route path="/episodes" element={<Episodes />} />
+
             </Routes>
+
 
 
         </div>

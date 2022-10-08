@@ -10,15 +10,15 @@ const Episodes = (props) => {
     }
 
 
+
     React.useEffect(() => {
-        fetch(`https://api.tvmaze.com/shows/${id}/episodes`)
+        fetch(`https://api.tvmaze.com/shows/${props.id}/episodes`)
             .then(res => res.json())
             .then(data => {
                 setEps(data);
             })
 
     }, []);
-
 
     return (
         <div>
