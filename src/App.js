@@ -5,12 +5,13 @@ import Timer from "./Components/alarmClock/Timer";
 import NavbarTrvl from "./Components/trvl/NavbarTrvl";
 import Hero from "./Components/trvl/Hero";
 import NavBar from "./Components/sports/NavBar";
+import MainShow from "./Components/tv/MainShow";
 
 const App = () => {
 
     return (
         <div>
-            <NavBar/>
+            <MainShow/>
         </div>
     );
 };
