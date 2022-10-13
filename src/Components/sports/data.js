@@ -163,6 +163,7 @@ export const testimonials = [
         job: "Software Egineer",
         avatar: require("/home/ender/Documents/JS/reactProjects/src/Components/sports/images/avatar2.jpg")
     },
+
     {
         id: 3,
         name: "Edem Quist",
